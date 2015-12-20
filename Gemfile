@@ -3,10 +3,12 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Add bootstrap for pretty UI #2015/12/20
+# Add bootstrap for pretty UI #add on 2015/12/20
 gem 'bootstrap-sass'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use sqlite3 as the database for Active Record #add & revised on 2015/12/21
+gem 'sqlite3', group: [:development, :test]	# plugin only for develeopment and test environment
+gem 'pg', group: :production			# plugin only for online environment
+gem 'rails_12factor', group: :production 	# plugin only for online environment
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
