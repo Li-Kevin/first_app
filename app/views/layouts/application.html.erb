@@ -19,16 +19,15 @@
 
 <!-- Content wrapped in container -->
 <div class="container">
-		<%= yield %>
-
+	<% flash.each do |key, value| %>
+		<div class="alert danger-<%= key %>"><%= value %></div>
+	<% end %>
+	<%= yield %>
+		
 	<!-- New Footer -->
-	<footer class="footer">
-		<small>
-			<a href="codecamp.io">Program DevOps Workshop Camp</a>
-		</small>
-	</footer>
-	<br>
+		<%= render :partial => "layouts/footer" %>
 	<!-- Debugging footer -->
+		<br>
 		<%= debug(params) if Rails.env.development? %>
 </div>
 

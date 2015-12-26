@@ -100,3 +100,23 @@ footer ul li {
 	float: left;
 	margin-left: 10px;
 }
+
+/* forms */
+
+#error_explanation {
+	color: #f00;
+	ul {
+		margin-right: 18px;
+	}
+}
+
+/* this failed;  the problem is caused by installing Bootstrap 3 and then calling Bootstrap 2 class names.  Source => http://stackoverflow.com/questions/19917429/ruby-field-with-errors-doesnt-extend-control-group-error
+.field_with_errors {
+		@extend .control-group;
+		@extend .error;
+	}
+*/
+
+.field_with_errors {
+		@extend .has-error;
+}
